@@ -10,34 +10,41 @@ export default function Projects() {
       description:
         "A recreation of the classic Pacman game with vanilla JavaScript, implementing various path-finding algorithms for ghost movement.",
       tags: ["JavaScript", "Canvas API", "Path-finding Algorithms"],
-      codeLink: "https://github.com/maskeynihal/pacman",
-      liveLink: "https://maskeynihal.github.io/pacman/",
+      codeLink: "https://github.com/",
+      liveLink: "https://example.github.io",
     },
     {
       title: "Pacman",
       description:
         "A recreation of the classic Pacman game with vanilla JavaScript, implementing various path-finding algorithms for ghost movement.",
       tags: ["JavaScript", "Canvas API", "Path-finding Algorithms"],
-      codeLink: "https://github.com/maskeynihal/pacman",
-      liveLink: "https://maskeynihal.github.io/pacman/",
+      codeLink: "https://github.com/",
+      liveLink: "https://example.github.io",
     },
     {
       title: "Pacman",
       description:
         "A recreation of the classic Pacman game with vanilla JavaScript, implementing various path-finding algorithms for ghost movement.",
       tags: ["JavaScript", "Canvas API", "Path-finding Algorithms"],
-      codeLink: "https://github.com/maskeynihal/pacman",
-      liveLink: "https://maskeynihal.github.io/pacman/",
+      codeLink: "https://github.com/",
+      liveLink: "https://example.github.io",
     },
     {
       title: "Pacman",
       description:
         "A recreation of the classic Pacman game with vanilla JavaScript, implementing various path-finding algorithms for ghost movement.",
       tags: ["JavaScript", "Canvas API", "Path-finding Algorithms"],
-      codeLink: "https://github.com/maskeynihal/pacman",
-      liveLink: "https://maskeynihal.github.io/pacman/",
+      codeLink: "https://github.com/",
+      liveLink: "https://example.github.io",
+    },
+    {
+      title: "Pacman",
+      description:
+        "A recreation of the classic Pacman game with vanilla JavaScript, implementing various path-finding algorithms for ghost movement.",
+      tags: ["JavaScript", "Canvas API", "Path-finding Algorithms"],
+      codeLink: "https://github.com/",
+      liveLink: "https://example.github.io",
     }
-
   ]
 
   return (
