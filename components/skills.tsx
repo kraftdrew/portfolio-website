@@ -4,24 +4,24 @@ import { Badge } from "@/components/ui/badge"
 export default function Skills() {
   const skillCategories = [
     {
-      category: "Frontend",
-      skills: ["JavaScript", "TypeScript", "React.js", "HTML/CSS", "Tailwind CSS"],
+      category: "Cloud & Data Platforms",
+      skills: ["Snowflake", "Databricks", "Azure Data Factory", "Azure Synapse", "Azure SQL", "Azure Data Lake", "MS Fabric", "MS SQL Server"],
     },
     {
-      category: "Backend",
-      skills: ["Node.js", "PHP", "Laravel", "Express.js", "RESTful APIs"],
+      category: "BI & Analytics",
+      skills: ["Power BI", "Power BI Embedded", "Data Analysis", "Data Visualization", "Excel", "SSAS"],
     },
     {
-      category: "Database",
-      skills: ["MySQL", "PostgreSQL", "DynamoDB", "MongoDB", "Redis"],
+      category: "Programming & Frameworks",
+      skills: ["Python", "PySpark", "SQL", "dbt", "Power Query (M)", "Unit Testing"],
     },
     {
-      category: "Cloud & DevOps",
-      skills: ["AWS", "GitHub Actions", "Travis-CI", "Docker", "CI/CD"],
+      category: "Data Engineering & ETL",
+      skills: ["ETL/ELT Pipelines", "SSIS", "Airflow", "Data Modeling", "Data Migration", "Data Integration"],
     },
     {
-      category: "Tools & Methodologies",
-      skills: ["Git", "Agile", "Scrum", "JIRA", "Figma"],
+      category: "DevOps & Tools",
+      skills: ["Git", "GitHub Actions", "CI/CD", "Cloud Computing", "Data Governance"],
     },
   ]
 
@@ -32,7 +32,7 @@ export default function Skills() {
           <div className="space-y-4 text-center">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Skills</h2>
             <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              My expertise and technical proficiencies
+              Technical expertise and professional competencies
             </p>
           </div>
 
@@ -58,4 +58,4 @@ export default function Skills() {
       </div>
     </section>
   )
-}
+} 

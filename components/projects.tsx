@@ -2,7 +2,6 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { ExternalLink, Github } from "lucide-react"
 import Link from "next/link"
-import OpenSource from "./open-source"
 
 export default function Projects() {
   const projects = [
@@ -15,27 +14,30 @@ export default function Projects() {
       liveLink: "https://maskeynihal.github.io/pacman/",
     },
     {
-      title: "Flappy Bird",
-      description: "A clone of the popular Flappy Bird game built with vanilla JavaScript and HTML5 Canvas.",
-      tags: ["JavaScript", "Canvas API", "Game Development"],
-      codeLink: "https://github.com/maskeynihal/flappy-bird",
-      liveLink: "https://maskeynihal.github.io/flappy-bird/",
-    },
-    {
-      title: "Pursue - Job Handling with AWS",
+      title: "Pacman",
       description:
-        "A JavaScript package for handling job processing using AWS services like SQS, Lambda, and Step Functions.",
-      tags: ["Node.js", "AWS", "SQS", "Lambda", "npm package"],
-      codeLink: "https://github.com/maskeynihal/pursue",
-      liveLink: null,
+        "A recreation of the classic Pacman game with vanilla JavaScript, implementing various path-finding algorithms for ghost movement.",
+      tags: ["JavaScript", "Canvas API", "Path-finding Algorithms"],
+      codeLink: "https://github.com/maskeynihal/pacman",
+      liveLink: "https://maskeynihal.github.io/pacman/",
     },
     {
-      title: "Mailer",
-      description: "A JavaScript package to prepare and send emails using AWS SES, with templating support.",
-      tags: ["Node.js", "AWS", "SES", "Email Templates", "npm package"],
-      codeLink: "https://github.com/maskeynihal/mailer",
-      liveLink: null,
+      title: "Pacman",
+      description:
+        "A recreation of the classic Pacman game with vanilla JavaScript, implementing various path-finding algorithms for ghost movement.",
+      tags: ["JavaScript", "Canvas API", "Path-finding Algorithms"],
+      codeLink: "https://github.com/maskeynihal/pacman",
+      liveLink: "https://maskeynihal.github.io/pacman/",
     },
+    {
+      title: "Pacman",
+      description:
+        "A recreation of the classic Pacman game with vanilla JavaScript, implementing various path-finding algorithms for ghost movement.",
+      tags: ["JavaScript", "Canvas API", "Path-finding Algorithms"],
+      codeLink: "https://github.com/maskeynihal/pacman",
+      liveLink: "https://maskeynihal.github.io/pacman/",
+    }
+
   ]
 
   return (
@@ -81,11 +83,6 @@ export default function Projects() {
                 </Card>
               </div>
             ))}
-          </div>
-
-          {/* Include Open Source section directly under Projects */}
-          <div className="mt-20">
-            <OpenSource />
           </div>
         </div>
       </div>
