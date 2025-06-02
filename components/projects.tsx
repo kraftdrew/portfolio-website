@@ -51,70 +51,72 @@ export default function Projects() {
             </p> */}
           </div>
 
-          <div className="flex gap-6 overflow-x-auto py-4">
-            {projects.map((project, index) => {
-              const cardLink = project.liveLink || project.codeLink;
-              return (
-                <a
-                  key={index}
-                  href={cardLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`project-card${project.gif && project.gif !== "" ? " has-gif" : ""} block no-underline hover:no-underline focus:no-underline`}
-                  style={{ cursor: 'pointer', minWidth: 350, maxWidth: 400, flex: '0 0 auto' }}
-                >
-                  <Card className="overflow-hidden h-full flex flex-col project-card">
-                    <CardContent className="project-content flex-1 flex flex-col p-5">
-                      <div className="mb-2 flex flex-wrap gap-2">
-                        {project.mainTags.map((tag, i) => (
-                          <span key={i} className="project-main-tag">{tag}</span>
-                        ))}
-                      </div>
-                      {project.image && (
-                        <div className="project-image-wrapper mb-3">
-                          <img
-                            src={project.image}
-                            alt={project.title}
-                            className={`project-image static-img${project.gif ? '' : ' always-visible'}`}
-                            style={{ position: project.gif ? 'absolute' : 'relative' }}
-                          />
-                          {project.gif && project.gif !== "" && (
-                            <img
-                              src={project.gif}
-                              alt={project.title}
-                              className="project-image gif-img"
-                            />
-                          )}
+          <div className="w-full overflow-x-auto">
+            <div className="flex gap-6 py-4 justify-center" style={{ minWidth: 'min-content' }}>
+              {projects.map((project, index) => {
+                const cardLink = project.liveLink || project.codeLink;
+                return (
+                  <a
+                    key={index}
+                    href={cardLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`project-card${project.gif && project.gif !== "" ? " has-gif" : ""} block no-underline hover:no-underline focus:no-underline`}
+                    style={{ cursor: 'pointer', minWidth: 350, maxWidth: 400, flex: '0 0 auto' }}
+                  >
+                    <Card className="overflow-hidden h-full flex flex-col project-card">
+                      <CardContent className="project-content flex-1 flex flex-col p-5">
+                        <div className="mb-2 flex flex-wrap gap-2">
+                          {project.mainTags.map((tag, i) => (
+                            <span key={i} className="project-main-tag">{tag}</span>
+                          ))}
                         </div>
-                      )}
-                      <h3 className="text-lg font-bold">{project.title}</h3>
-                      <p className="text-sm text-muted-foreground mt-2 flex-1">{project.description}</p>
-                      <div className="project-tags mt-3">
-                        {project.tags.map((tag, i) => (
-                          <span key={i} className="project-tag">
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-                      <div className="project-links mt-4">
-                        <Button size="sm" variant="outline" asChild>
-                          <Link href={project.codeLink} target="_blank" rel="noopener noreferrer">
-                            <Github className="mr-1 h-4 w-4" /> Code
-                          </Link>
-                        </Button>
-                        {project.liveLink && (
+                        {project.image && (
+                          <div className="project-image-wrapper mb-3">
+                            <img
+                              src={project.image}
+                              alt={project.title}
+                              className={`project-image static-img${project.gif ? '' : ' always-visible'}`}
+                              style={{ position: project.gif ? 'absolute' : 'relative' }}
+                            />
+                            {project.gif && project.gif !== "" && (
+                              <img
+                                src={project.gif}
+                                alt={project.title}
+                                className="project-image gif-img"
+                              />
+                            )}
+                          </div>
+                        )}
+                        <h3 className="text-lg font-bold">{project.title}</h3>
+                        <p className="text-sm text-muted-foreground mt-2 flex-1">{project.description}</p>
+                        <div className="project-tags mt-3">
+                          {project.tags.map((tag, i) => (
+                            <span key={i} className="project-tag">
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                        <div className="project-links mt-4">
                           <Button size="sm" variant="outline" asChild>
-                            <Link href={project.liveLink} target="_blank" rel="noopener noreferrer">
-                              <ExternalLink className="mr-1 h-4 w-4" /> Live
+                            <Link href={project.codeLink} target="_blank" rel="noopener noreferrer">
+                              <Github className="mr-1 h-4 w-4" /> Code
                             </Link>
                           </Button>
-                        )}
-                      </div>
-                    </CardContent>
-                  </Card>
-                </a>
-              );
-            })}
+                          {project.liveLink && (
+                            <Button size="sm" variant="outline" asChild>
+                              <Link href={project.liveLink} target="_blank" rel="noopener noreferrer">
+                                <ExternalLink className="mr-1 h-4 w-4" /> Live
+                              </Link>
+                            </Button>
+                          )}
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </a>
+                );
+              })}
+            </div>
           </div>
         </div>
       </div>
