@@ -13,7 +13,7 @@ export default function Projects() {
       image: "/images/stock-market.png",
       gif: "/images/stock-market.gif",
       description:
-        "End to end ETL pipeline for stock market data, with a PowerBI dashboard for visualization.",
+        "End to end DE projects with Databricks, Azure and PowerBI.",
       tags: ["Databricks", "Azure", "Python", "PowerBI", "VNet", "KeyVault"],
       codeLink: "https://github.com/kraftdrew/azure-stock-market",
       liveLink: "https://app.powerbi.com/view?r=eyJrIjoiNzFiOGZlZGQtZjdjYi00NTQ0LWI0OGYtNzYxMzY1YzA4NzlhIiwidCI6ImM1OGE5N2E3LTkzZTEtNDI4NC05ZDY5LWM2NzUyYmFmNzdhZiJ9",
@@ -60,6 +60,17 @@ export default function Projects() {
         "Database system design for PostgreSQL in 3NF.",
       tags: ["PostgreSQL", "ERD", "3NF", "OLTP"],
       codeLink: "https://github.com/kraftdrew/warehouse-db",
+      liveLink: "", 
+    },
+    {
+      mainTags: ["Data Engineering"],
+      title: "ETL Pipelines with Pandas on Snowflake",
+      image: "/images/etl-snowflake.png",
+      gif: "",
+      description:
+        "ETL pipelines with Pandas on Snowflake, with a focus on data quality and performance.",
+      tags: ["Snowflake", "Pandas", "Python"],
+      codeLink: "https://github.com/kraftdrew/ETL-with-pandas-on-snowflake",
       liveLink: "", 
     },
   ]
@@ -127,22 +138,25 @@ export default function Projects() {
                         </div>
                         <div className="project-links mt-4">
                           {project.codeLink && (
-                            <button
+                            <Button
                               type="button"
-                              className="inline-flex items-center px-3 py-2 border border-gray-300 rounded-md text-sm font-medium bg-white hover:bg-gray-50 transition-colors mr-2"
+                              variant="outline"
+                              size="sm"
+                              className="mr-2"
                               onClick={e => { e.stopPropagation(); window.open(project.codeLink, '_blank', 'noopener,noreferrer'); }}
                             >
                               <Github className="mr-1 h-4 w-4" /> Code
-                            </button>
+                            </Button>
                           )}
                           {project.liveLink && (
-                            <button
+                            <Button
                               type="button"
-                              className="inline-flex items-center px-3 py-2 border border-gray-300 rounded-md text-sm font-medium bg-white hover:bg-gray-50 transition-colors"
+                              variant="outline"
+                              size="sm"
                               onClick={e => { e.stopPropagation(); window.open(project.liveLink, '_blank', 'noopener,noreferrer'); }}
                             >
                               <ExternalLink className="mr-1 h-4 w-4" /> Live
-                            </button>
+                            </Button>
                           )}
                         </div>
                       </CardContent>
