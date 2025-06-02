@@ -44,7 +44,8 @@ export default function Hero() {
             </div>
           </div>
         </div>
-        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 hidden md:block js-only">
+        {/* Arrow up */}
+        {/* <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 hidden md:block js-only">
           <Link
             href="#"
             onClick={(e) => {
@@ -54,7 +55,7 @@ export default function Hero() {
           >
             <ArrowUpCircle className="h-10 w-10 text-primary animate-bounce" />
           </Link>
-        </div>
+        </div> */}
       </div>
     </section>
   )
