@@ -51,7 +51,7 @@ export default function Projects() {
             </p> */}
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+          <div className="flex gap-6 overflow-x-auto py-4">
             {projects.map((project, index) => {
               const cardLink = project.liveLink || project.codeLink;
               return (
@@ -61,7 +61,7 @@ export default function Projects() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`project-card${project.gif && project.gif !== "" ? " has-gif" : ""} block no-underline hover:no-underline focus:no-underline`}
-                  style={{ cursor: 'pointer' }}
+                  style={{ cursor: 'pointer', minWidth: 350, maxWidth: 400, flex: '0 0 auto' }}
                 >
                   <Card className="overflow-hidden h-full flex flex-col project-card">
                     <CardContent className="project-content flex-1 flex flex-col p-5">
