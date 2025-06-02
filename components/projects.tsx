@@ -1,3 +1,5 @@
+"use client"
+
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { ExternalLink, Github } from "lucide-react"
@@ -38,6 +40,28 @@ export default function Projects() {
       codeLink: "https://github.com/kraftdrew/power-bi-reports/tree/main/src/data-jobs-report",
       liveLink: "https://app.powerbi.com/view?r=eyJrIjoiYzAxYjRlNzQtN2JjMC00NWY2LWJhMDktMWE5ZjRiYjhkYTM5IiwidCI6IjAyOTE4OGU3LTE1MjgtNDE4Zi1iY2RlLTQxNzQzZDEwNjI2ZCIsImMiOjN9", 
     },
+    {
+      mainTags: ["Frontend Development"],
+      title: "Portfolio Website",
+      image: "/images/portfolio-website.png",
+      gif: "/images/portfolio-website.gif",
+      description:
+        "My personal portfolio website, built with Next.js, Tailwind CSS, and TypeScript.",
+      tags: ["Next.js", "Tailwind CSS", "TypeScript"],
+      codeLink: "https://github.com/kraftdrew/portfolio-website",
+      liveLink: "https://www.andrewkravchuk.com", 
+    },
+    {
+      mainTags: ["Database system design"],
+      title: "Grocery warehouse database in 3NF",
+      image: "/images/warehouse-database.png",
+      gif: "",
+      description:
+        "Database system design for PostgreSQL in 3NF.",
+      tags: ["PostgreSQL", "ERD", "3NF", "OLTP"],
+      codeLink: "https://github.com/kraftdrew/warehouse-db",
+      liveLink: "", 
+    },
   ]
 
   return (
@@ -55,11 +79,18 @@ export default function Projects() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 py-4 mx-auto px-2">
               {projects.map((project, index) => {
                 const cardLink = project.liveLink || project.codeLink;
+                const hasCardLink = !!cardLink;
+                const CardWrapper = hasCardLink ? 'a' : 'div';
                 return (
-                  <div
+                  <CardWrapper
                     key={index}
+                    {...(hasCardLink ? {
+                      href: cardLink,
+                      target: "_blank",
+                      rel: "noopener noreferrer"
+                    } : {})}
                     className={`project-card${project.gif && project.gif !== "" ? " has-gif" : ""} block no-underline hover:no-underline focus:no-underline w-full md:max-w-[400px]`}
-                    style={{ cursor: 'pointer' }}
+                    style={{ cursor: hasCardLink ? 'pointer' : 'default' }}
                   >
                     <Card className="overflow-hidden h-full flex flex-col project-card">
                       <CardContent className="project-content flex-1 flex flex-col p-5">
@@ -69,18 +100,18 @@ export default function Projects() {
                           ))}
                         </div>
                         {project.image && (
-                          <div className="project-image-wrapper mb-3">
+                          <div className="project-image-wrapper mb-3 w-full aspect-[16/9] bg-gray-100 relative overflow-hidden">
                             <img
                               src={project.image}
                               alt={project.title}
-                              className={`project-image static-img${project.gif ? '' : ' always-visible'}`}
+                              className={`project-image static-img${project.gif ? '' : ' always-visible'} w-full h-full object-cover`}
                               style={{ position: project.gif ? 'absolute' : 'relative' }}
                             />
                             {project.gif && project.gif !== "" && (
                               <img
                                 src={project.gif}
                                 alt={project.title}
-                                className="project-image gif-img"
+                                className="project-image gif-img w-full h-full object-cover"
                               />
                             )}
                           </div>
@@ -95,22 +126,28 @@ export default function Projects() {
                           ))}
                         </div>
                         <div className="project-links mt-4">
-                          <Button size="sm" variant="outline" asChild>
-                            <Link href={project.codeLink} target="_blank" rel="noopener noreferrer">
+                          {project.codeLink && (
+                            <button
+                              type="button"
+                              className="inline-flex items-center px-3 py-2 border border-gray-300 rounded-md text-sm font-medium bg-white hover:bg-gray-50 transition-colors mr-2"
+                              onClick={e => { e.stopPropagation(); window.open(project.codeLink, '_blank', 'noopener,noreferrer'); }}
+                            >
                               <Github className="mr-1 h-4 w-4" /> Code
-                            </Link>
-                          </Button>
+                            </button>
+                          )}
                           {project.liveLink && (
-                            <Button size="sm" variant="outline" asChild>
-                              <Link href={project.liveLink} target="_blank" rel="noopener noreferrer">
-                                <ExternalLink className="mr-1 h-4 w-4" /> Live
-                              </Link>
-                            </Button>
+                            <button
+                              type="button"
+                              className="inline-flex items-center px-3 py-2 border border-gray-300 rounded-md text-sm font-medium bg-white hover:bg-gray-50 transition-colors"
+                              onClick={e => { e.stopPropagation(); window.open(project.liveLink, '_blank', 'noopener,noreferrer'); }}
+                            >
+                              <ExternalLink className="mr-1 h-4 w-4" /> Live
+                            </button>
                           )}
                         </div>
                       </CardContent>
                     </Card>
-                  </div>
+                  </CardWrapper>
                 );
               })}
             </div>
