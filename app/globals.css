@@ -241,3 +241,54 @@ header.scrolled {
   background-color: rgba(0, 0, 0, 0.7);
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
+
+.project-main-tag {
+  display: inline-block;
+  background: hsl(217 100% 50%);
+  color: #fff;
+  font-weight: 600;
+  border-radius: 0.375rem;
+  padding: 0.15rem 0.75rem;
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.05em;
+  box-shadow: 0 2px 8px rgba(0,48,255,0.08);
+}
+
+.project-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  background: #f3f4f6;
+}
+
+.project-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s cubic-bezier(0.4,0,0.2,1), opacity 0.3s;
+  opacity: 1;
+}
+
+.static-img {
+  z-index: 1;
+}
+
+.gif-img {
+  z-index: 2;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.project-card.has-gif:hover .gif-img {
+  opacity: 1;
+}
+
+.project-card.has-gif:hover .static-img {
+  opacity: 0;
+}

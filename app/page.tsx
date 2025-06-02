@@ -14,7 +14,7 @@ export default function Home() {
     <div className="w-full">
       <Hero />
       <Skills />
-      {/* <Projects /> */}
+      <Projects />
     </div>
   )
 }
