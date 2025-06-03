@@ -5,23 +5,19 @@ export default function Skills() {
   const skillCategories = [
     {
       category: "Cloud & Data Platforms",
-      skills: ["Snowflake", "Databricks", "Azure Data Factory", "Azure Synapse", "Azure SQL", "Azure Data Lake", "MS Fabric", "MS SQL Server"],
+      skills: ["AWS", "Snowflake", "Azure", "Databricks", "Power BI", "S3", "EC2/ECS", "AWS Lambda"],
     },
     {
       category: "BI & Analytics",
-      skills: ["Power BI", "Power BI Embedded", "Data Analysis", "Data Visualization", "Excel", "SSAS"],
+      skills: ["Power BI", "MS Fabric", "Azure SQL", "Azure Synapse"],
     },
     {
-      category: "Programming & Frameworks",
-      skills: ["Python", "PySpark", "SQL", "dbt", "Power Query (M)", "Unit Testing"],
+      category: "Software/Data Engineering",
+      skills: ["Python", "PySpark", "SQL", "dbt", "JavaScript", "React", "Next.js"],
     },
     {
-      category: "Data Engineering & ETL",
-      skills: ["ETL/ELT Pipelines", "SSIS", "Airflow", "Data Modeling", "Data Migration", "Data Integration"],
-    },
-    {
-      category: "DevOps & Tools",
-      skills: ["Git", "GitHub Actions", "CI/CD", "Cloud Computing", "Data Governance"],
+      category: "DevOps & Orchestration",
+      skills: ["zsh", "Git", "GitHub Actions", "CI/CD", "Airflow", "Azure Data Factory"],
     },
   ]
 
@@ -36,7 +32,7 @@ export default function Skills() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
             {skillCategories.map((category, index) => (
               <div key={index} className="skill-card">
                 <Card className="h-full border-t-4 border-t-primary">
