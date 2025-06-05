@@ -82,7 +82,18 @@ export default function Projects() {
       image: "/images/articles/wheel-article.png",
       link: "https://www.notion.so/Deploying-Python-Code-to-Databricks-Using-whl-Files-20749e74cc4b80dc9e20f196ded1bf64?source=copy_link",
     },
-    // Add more articles here as needed
+    {
+      title: "Apache Airflow 3.0",
+      description: "Airflow 3.0 introduces major architectural enhancements, native event-driven scheduling, asset-based workflows, and improved version control, significantly transforming data pipeline orchestration.",
+      image: "/images/articles/airflow-3.png",
+      link: "https://www.notion.so/Apache-Airflow-3-0-20949e74cc4b8002b929c56fa2380c5d",
+    },
+    {
+      title: "Airflow XCom: A Practical Guide",
+      description: "A practical guide to using Airflow XComs for effective task-to-task communication in your workflows.",
+      image: "/images/articles/airflow-xcom.png",
+      link: "https://www.notion.so/Airflow-XCom-A-Practical-Guide-20949e74cc4b80df80aee508b882d87d",
+    },
   ];
 
   return (
@@ -187,27 +198,33 @@ export default function Projects() {
             <div className="space-y-4 text-center">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Articles</h2>
             </div>
-            <div className="w-full flex flex-wrap gap-6 justify-center">
-              {articles.map((article, idx) => (
-                <a
-                  key={idx}
-                  href={article.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block max-w-xl w-full p-6 bg-card border rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 no-underline"
-                >
-                  <div className="mb-4 w-full aspect-[16/9] bg-gray-100 rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700 shadow-sm">
-                    <img
-                      src={article.image}
-                      alt={article.title}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <h3 className="text-xl font-semibold mb-2">{article.title}</h3>
-                  <p className="text-muted-foreground mb-2">{article.description}</p>
-                  <span className="text-primary font-medium">Read Article →</span>
-                </a>
-              ))}
+            <div className="flex justify-center">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                {articles.map((article, idx) => (
+                  <a
+                    key={idx}
+                    href={article.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block max-w-md w-full p-6 bg-card border rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 no-underline h-full"
+                  >
+                    <div className="flex flex-col h-full justify-between">
+                      <div>
+                        <div className="mb-4 w-full aspect-[16/9] bg-gray-100 rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700 shadow-sm">
+                          <img
+                            src={article.image}
+                            alt={article.title}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                        <h3 className="text-xl font-semibold mb-2">{article.title}</h3>
+                        <p className="text-muted-foreground mb-2 text-base">{article.description}</p>
+                      </div>
+                      <span className="text-primary font-medium text-base mt-4">Read Article →</span>
+                    </div>
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
         </div>
