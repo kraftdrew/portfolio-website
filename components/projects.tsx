@@ -75,99 +75,160 @@ export default function Projects() {
     },
   ]
 
-  return (
-    <section id="projects" className="py-20">
-      <div className="container px-4 md:px-6 mx-auto">
-        <div className="space-y-12">
-          <div className="space-y-4 text-center">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Projects</h2>
-            {/* <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              A selection of my personal and professional projects
-            </p> */}
-          </div>
+  const articles = [
+    {
+      title: "Deploying Python Code to Databricks Using .whl Files",
+      description: "A step-by-step guide to packaging and deploying Python code to Databricks using wheel (.whl) files.",
+      image: "/images/articles/wheel-article.png",
+      link: "https://www.notion.so/Deploying-Python-Code-to-Databricks-Using-whl-Files-20749e74cc4b80dc9e20f196ded1bf64?source=copy_link",
+    },
+    {
+      title: "Apache Airflow 3.0",
+      description: "Airflow 3.0 introduces major architectural enhancements, native event-driven scheduling, asset-based workflows, and improved version control, significantly transforming data pipeline orchestration.",
+      image: "/images/articles/airflow-3.png",
+      link: "https://www.notion.so/Apache-Airflow-3-0-20949e74cc4b8002b929c56fa2380c5d",
+    },
+    {
+      title: "Airflow XCom: A Practical Guide",
+      description: "A practical guide to using Airflow XComs for effective task-to-task communication in your workflows.",
+      image: "/images/articles/airflow-xcom.png",
+      link: "https://www.notion.so/Airflow-XCom-A-Practical-Guide-20949e74cc4b80df80aee508b882d87d",
+    },
+  ];
 
-          <div className="w-full">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 py-4 mx-auto px-2">
-              {projects.map((project, index) => {
-                const cardLink = project.liveLink || project.codeLink;
-                const hasCardLink = !!cardLink;
-                const CardWrapper = hasCardLink ? 'a' : 'div';
-                return (
-                  <CardWrapper
-                    key={index}
-                    {...(hasCardLink ? {
-                      href: cardLink,
-                      target: "_blank",
-                      rel: "noopener noreferrer"
-                    } : {})}
-                    className={`project-card${project.gif && project.gif !== "" ? " has-gif" : ""} block no-underline hover:no-underline focus:no-underline w-full md:max-w-[400px]`}
-                    style={{ cursor: hasCardLink ? 'pointer' : 'default' }}
-                  >
-                    <Card className="overflow-hidden h-full flex flex-col project-card">
-                      <CardContent className="project-content flex-1 flex flex-col p-5">
-                        <div className="mb-2 flex flex-wrap gap-2">
-                          {project.mainTags.map((tag, i) => (
-                            <span key={i} className="project-main-tag">{tag}</span>
-                          ))}
-                        </div>
-                        {project.image && (
-                          <div className="project-image-wrapper mb-3 w-full aspect-[16/9] bg-gray-100 relative overflow-hidden">
-                            <img
-                              src={project.image}
-                              alt={project.title}
-                              className={`project-image static-img${project.gif ? '' : ' always-visible'} w-full h-full object-cover`}
-                              style={{ position: project.gif ? 'absolute' : 'relative' }}
-                            />
-                            {project.gif && project.gif !== "" && (
+  return (
+    <>
+      <section id="projects" className="py-20">
+        <div className="container px-4 md:px-6 mx-auto">
+          <div className="space-y-12">
+            <div className="space-y-4 text-center">
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Projects</h2>
+              {/* <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                A selection of my personal and professional projects
+              </p> */}
+            </div>
+
+            <div className="w-full">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 py-4 mx-auto px-2">
+                {projects.map((project, index) => {
+                  const cardLink = project.liveLink || project.codeLink;
+                  const hasCardLink = !!cardLink;
+                  const CardWrapper = hasCardLink ? 'a' : 'div';
+                  return (
+                    <CardWrapper
+                      key={index}
+                      {...(hasCardLink ? {
+                        href: cardLink,
+                        target: "_blank",
+                        rel: "noopener noreferrer"
+                      } : {})}
+                      className={`project-card${project.gif && project.gif !== "" ? " has-gif" : ""} block no-underline hover:no-underline focus:no-underline w-full md:max-w-[400px]`}
+                      style={{ cursor: hasCardLink ? 'pointer' : 'default' }}
+                    >
+                      <Card className="overflow-hidden h-full flex flex-col project-card">
+                        <CardContent className="project-content flex-1 flex flex-col p-5">
+                          <div className="mb-2 flex flex-wrap gap-2">
+                            {project.mainTags.map((tag, i) => (
+                              <span key={i} className="project-main-tag">{tag}</span>
+                            ))}
+                          </div>
+                          {project.image && (
+                            <div className="project-image-wrapper mb-3 w-full aspect-[16/9] bg-gray-100 relative overflow-hidden">
                               <img
-                                src={project.gif}
+                                src={project.image}
                                 alt={project.title}
-                                className="project-image gif-img w-full h-full object-cover"
+                                className={`project-image static-img${project.gif ? '' : ' always-visible'} w-full h-full object-cover`}
+                                style={{ position: project.gif ? 'absolute' : 'relative' }}
                               />
+                              {project.gif && project.gif !== "" && (
+                                <img
+                                  src={project.gif}
+                                  alt={project.title}
+                                  className="project-image gif-img w-full h-full object-cover"
+                                />
+                              )}
+                            </div>
+                          )}
+                          <h3 className="text-lg font-bold">{project.title}</h3>
+                          <p className="text-sm text-muted-foreground mt-2 flex-1">{project.description}</p>
+                          <div className="project-tags mt-3">
+                            {project.tags.map((tag, i) => (
+                              <span key={i} className="project-tag">
+                                {tag}
+                              </span>
+                            ))}
+                          </div>
+                          <div className="project-links mt-4">
+                            {project.codeLink && (
+                              <Button
+                                type="button"
+                                variant="outline"
+                                size="sm"
+                                className="mr-2"
+                                onClick={e => { e.stopPropagation(); window.open(project.codeLink, '_blank', 'noopener,noreferrer'); }}
+                              >
+                                <Github className="mr-1 h-4 w-4" /> Code
+                              </Button>
+                            )}
+                            {project.liveLink && (
+                              <Button
+                                type="button"
+                                variant="outline"
+                                size="sm"
+                                onClick={e => { e.stopPropagation(); window.open(project.liveLink, '_blank', 'noopener,noreferrer'); }}
+                              >
+                                <ExternalLink className="mr-1 h-4 w-4" /> Live
+                              </Button>
                             )}
                           </div>
-                        )}
-                        <h3 className="text-lg font-bold">{project.title}</h3>
-                        <p className="text-sm text-muted-foreground mt-2 flex-1">{project.description}</p>
-                        <div className="project-tags mt-3">
-                          {project.tags.map((tag, i) => (
-                            <span key={i} className="project-tag">
-                              {tag}
-                            </span>
-                          ))}
-                        </div>
-                        <div className="project-links mt-4">
-                          {project.codeLink && (
-                            <Button
-                              type="button"
-                              variant="outline"
-                              size="sm"
-                              className="mr-2"
-                              onClick={e => { e.stopPropagation(); window.open(project.codeLink, '_blank', 'noopener,noreferrer'); }}
-                            >
-                              <Github className="mr-1 h-4 w-4" /> Code
-                            </Button>
-                          )}
-                          {project.liveLink && (
-                            <Button
-                              type="button"
-                              variant="outline"
-                              size="sm"
-                              onClick={e => { e.stopPropagation(); window.open(project.liveLink, '_blank', 'noopener,noreferrer'); }}
-                            >
-                              <ExternalLink className="mr-1 h-4 w-4" /> Live
-                            </Button>
-                          )}
-                        </div>
-                      </CardContent>
-                    </Card>
-                  </CardWrapper>
-                );
-              })}
+                        </CardContent>
+                      </Card>
+                    </CardWrapper>
+                  );
+                })}
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+      {/* Articles Section */}
+      <section id="articles" className="py-20 bg-muted/30">
+        <div className="container px-4 md:px-6 mx-auto">
+          <div className="space-y-12">
+            <div className="space-y-4 text-center">
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Articles</h2>
+            </div>
+            <div className="flex justify-center">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                {articles.map((article, idx) => (
+                  <a
+                    key={idx}
+                    href={article.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block max-w-md w-full p-6 bg-card border rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 no-underline h-full"
+                  >
+                    <div className="flex flex-col h-full justify-between">
+                      <div>
+                        <div className="mb-4 w-full aspect-[16/9] bg-gray-100 rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700 shadow-sm">
+                          <img
+                            src={article.image}
+                            alt={article.title}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                        <h3 className="text-xl font-semibold mb-2">{article.title}</h3>
+                        <p className="text-muted-foreground mb-2 text-base">{article.description}</p>
+                      </div>
+                      <span className="text-primary font-medium text-base mt-4">Read Article →</span>
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
   )
 }
